@@ -1,10 +1,10 @@
 
 <footer class="bg-white">
 
-  <div class="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
+  <div class="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 lg:px-7">
   
 
-    <div class="lg:flex lg:items-start lg:gap-8">
+    <div class="lg:flex lg:items-start lg:gap-3">
          <div class="shrink-0">
             <img class="size-8" src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=500" alt="Your Company">
           </div>

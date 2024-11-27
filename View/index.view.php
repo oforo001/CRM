@@ -8,12 +8,14 @@
       <div class="lg:pr-4">
         <div class="max-w-xl text-base/7 text-gray-700 lg:max-w-lg">
           
+          
           <p>
             Welcome to your appointment management system! Simplify your daily scheduling tasks,
             without borring calls and emails. My platform will easyly help you to manage your appointments
             My intuitive app allows you to 
             plan, manage, and report visits seamlessly, empowering you to focus on building stronger client relationships.
           </p>
+         
           <ul role="list" class="mt-8 space-y-8 text-gray-600">
             <li class="flex gap-x-3">
               <svg class="mt-1 size-5 flex-none text-indigo-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
