@@ -2,8 +2,6 @@
 <?php require 'Partials/navbar.php'; ?>
 <?php require 'Partials/banner.php'; ?>
 
-
-
   <main>
   <?php require 'Partials/grafic-effect.php'; ?>
   <div class="lg:col-span-2 lg:col-start-1 lg:row-start-2 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8">
@@ -36,16 +34,11 @@
                That’s why our platform is built with robust security features:</span>
             </li>
             <ul class="mt-2 list-disc list-inside pl-6">
-
               <li><strong>Daily Database Backups:</strong> Safeguard your information with automatic backups, ensuring data recovery in case of unexpected issues.</li>
-             
               <li><strong>User Access Controls:</strong> Manage permissions and grant access only to authorized users.</li>
-             
               <li><strong>SSL Encryption:</strong> Ensures all data transmissions are secure and private.</li>
-
             </ul>
           </ul>
-
           <h2 class="mt-16 text-2xl font-bold tracking-tight text-gray-900">No server? No problem.</h2>
             <p class="mt-6">
               Don’t worry about managing servers or complicated infrastructure—we've got you covered. Our platform is entirely cloud-based, allowing you to focus on what matters most: scheduling and managing your appointments efficiently.  
@@ -56,7 +49,6 @@
             <p class="mt-4">
               Say goodbye to costly server maintenance and hello to a scalable, user-friendly solution that grows with your organization. Experience the freedom of managing appointments anywhere, anytime, with complete peace of mind.
             </p>
-
       </div>
     </div>
   </div>

@@ -12,7 +12,9 @@ redirectToNexPage($path, $routes);
 
 function redirectToNexPage($path, $routes){
   if(array_key_exists($path, $routes)){
+    echo $path;
     require $routes[$path];
+    
   }else{
     echo '404 Not Found';
   }
