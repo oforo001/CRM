@@ -12,12 +12,12 @@ class Database{
     $this->connection->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
   }
 
-  public function prepare($query, $params = []){
-
+  public function prepare($query) {
     $this->statement = $this->connection->prepare($query);
-
+    return $this;
+  }
+  public function execute($params = []) {
     $this->statement->execute($params);
-
     return $this;
   }
 
@@ -27,9 +27,9 @@ class Database{
   public function fetchAll(){
     return $this->statement->fetchAll();
   }
+  public function rowCount() {
+    return $this->statement->rowCount();
+  }
 }
-
-
-
 
 ?>
