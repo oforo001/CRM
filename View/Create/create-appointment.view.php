@@ -6,7 +6,7 @@
   <p class="mb-5 text-lg text-gray-600">Fill the form below to register your visit.</p>
   <div class="min-h-screen flex items-center justify-center">
   <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-    <form method="POST" class="space-y-12 bg-white p-8 rounded-md shadow-md">
+    <form method="POST" id="visit-form" class="space-y-12 bg-white p-8 rounded-md shadow-md">
       <div class="border-b border-gray-900/10 pb-12">
         <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
           <div class="sm:col-span-4">
@@ -132,6 +132,7 @@
               name="visitor_id"
               type="number"
               min="1"
+              placeholder="Provide your organisation ID"
               class="pl-2 block w-1/2 text-left rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm/6">
             </div>
             <?php if (isset($errors['visitor_id'])): ?>
@@ -192,12 +193,23 @@
       </div>
 
       <div class="mt-6 flex items-center justify-center gap-x-6">
-        <button type="button" class="text-sm/6 font-semibold text-gray-900">Cancel</button>
-        <button type="submit" class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Save</button>
+        <button type="button" id="cancel-button" class="text-sm/6 font-semibold text-gray-900">Cancel</button>
+        <button type="submit" id="submit-button" class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Save</button>
       </div>
     </form>
   </div>
 </div>
 </div>
+<div id="confirmation-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-gray-900 bg-opacity-50">
+  <div class="bg-white p-6 rounded-lg shadow-lg max-w-sm w-full">
+    <h2 id="modal-title" class="text-xl font-semibold text-gray-900 mb-4">Confirmation</h2>
+    <p id="modal-message" class="text-gray-700 mb-4">Are you sure you want to proceed?</p>
+    <div class="flex justify-end gap-4">
+      <button id="modal-cancel" class="px-4 py-2 bg-gray-300 text-gray-900 text-sm font-semibold rounded-md hover:bg-gray-400 focus:outline-none">No</button>
+      <button id="modal-confirm" class="px-4 py-2 bg-indigo-600 text-white text-sm font-semibold rounded-md hover:bg-indigo-500 focus:outline-none">Yes</button>
+    </div>
+  </div>
+</div>
+<script src="View/js/form-submit.js"></script>
 
 <?php require 'View/Partials/footer.php'; ?>

@@ -81,6 +81,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             'end_at' => $end_at
         ]);
 
+        header('Location: /CRM/');
+        exit();
+
         
     }
 
