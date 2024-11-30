@@ -32,4 +32,11 @@ class Validator{
     return $givenDate >= $currentDate;
 }
 
+public static function isTimeOk($begin_time, $end_time){
+
+  return $begin_time < $end_time;
+}
+
+
+
 }

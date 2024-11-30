@@ -166,17 +166,23 @@
           <div class="sm:col-span-4">
             <div class="flex items-center gap-4">
               <div class="flex-1">
-                <label for="begin-time" class="text-sm/6 font-medium text-gray-900">Begins At:</label>
-                <input id="begin-time"
-                 name="begin-time"
+                <label for="begins_at" class="text-sm/6 font-medium text-gray-900">Begins At:</label>
+                <input id="begins_at"
+                 name="begins_at"
                  type="time"
                  class="mt-2 block w-full rounded-md pl-2 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm/6">
+                 <?php if(isset($errors['begins_at'])): ?>
+                    <p class="text-left text-red-500 text-sm">
+                        <?= htmlspecialchars($errors['begins_at']); ?>
+                    </p>
+                <?php endif; ?>
               </div>
+              
 
               <div class="flex-1">
-                <label for="end-time" class="text-sm/6 font-medium text-gray-900">Ends At:</label>
-                <input id="end-time"
-                 name="end-time"\
+                <label for="end_at" class="text-sm/6 font-medium text-gray-900">Ends At:</label>
+                <input id="end_at"
+                 name="end_at"
                  type="time"
                  class="mt-2 block w-full rounded-md pl-2 border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm/6">
               </div>

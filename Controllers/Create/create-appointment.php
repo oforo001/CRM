@@ -19,6 +19,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = $_POST['email'];
     $visitor_id = $_POST['visitor_id'] ?? '';
     $visit_date = $_POST['visit_date'];
+    $begins_at = $_POST['begins_at'];
+    $end_at = $_POST['end_at'];
 
 
     // Validation checks
@@ -52,13 +54,36 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         
         if ($statement->rowCount() === 0) {
             $errors['visitor_id'] = 'Visitor with this ID does not exist';
-        } else {
-            $visitor = $statement->fetch();
         }
     }
+
     if(! Validator:: isDateOk($visit_date)){
         $errors['visit_date'] = $errorMessage;
     }
+
+    if(! isset($begins_at) || ! isset($end_at) || ! Validator:: isTimeOk($begins_at, $end_at)){
+        $errors['begins_at'] = $errorMessage;
+        $errors['end_at'] = $errorMessage;
+    }
+
+    if(empty($errors)){
+        $statement = $dbConnection->prepare (
+            'INSERT INTO visits (visitor_id, business_nip, reason, about, visit_date, begin_time, end_time)
+             VALUES (:visitor_id, :NIP, :reason, :about, :visit_date, :begins_at, :end_at)'
+        );
+        $statement->execute([
+            'visitor_id' => $visitor_id,
+            'NIP' => $NIP,
+            'reason' => $reason,
+            'about' => $about,
+            'visit_date' => $visit_date,
+            'begins_at' => $begins_at,
+            'end_at' => $end_at
+        ]);
+
+        
+    }
+
 }
 
 require 'View/Create/create-appointment.view.php';
