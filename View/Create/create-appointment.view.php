@@ -36,7 +36,7 @@
                 <input type="text"
                   name="NIP"
                   class="block flex-1 border-0 bg-transparent py-1.5 pl-2 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm/6"
-                  placeholder="You get company-NIP by organization [0-9]"
+                  placeholder="You get company-NIP by organization [0-9]. For test: 12345"
                   required
                   pattern="[0-9]+"
                   value="<?php echo isset($_POST['NIP']) ? htmlspecialchars($_POST['NIP']) : ''; ?>">
