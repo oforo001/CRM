@@ -3,6 +3,7 @@
 $routes = require 'routes.php';
 
 $path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+//dd($path);
 redirectToNexPage($path, $routes);
 
 
