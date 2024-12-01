@@ -14,8 +14,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $reason = $_POST['reason'];
     $NIP = $_POST['NIP'];
     $about = $_POST['about'];
-    $name = $_POST['name'];
-    $lastname = $_POST['lastname'];
+    $name = $_POST['first_name'];
+    $lastname = $_POST['last_name'];
     $email = $_POST['email'];
     $visitor_id = $_POST['visitor_id'] ?? '';
     $visit_date = $_POST['visit_date'];
@@ -53,7 +53,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $statement->execute(['visitor_id' => $visitor_id]);
         
         if ($statement->rowCount() === 0) {
-            $errors['visitor_id'] = 'Visitor with this ID does not exist';
+         $errors['visitor_id'] = 'Visitor with this ID does not exist
+                                get the ID from your Organisation';
+           
         }
     }
 
@@ -68,13 +70,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if(empty($errors)){
         $statement = $dbConnection->prepare (
-            'INSERT INTO visits (visitor_id, business_nip, reason, about, visit_date, begin_time, end_time)
-             VALUES (:visitor_id, :NIP, :reason, :about, :visit_date, :begins_at, :end_at)'
+            'INSERT INTO visits (visitor_id, business_nip, reason, representant_name, representant_lastname, representant_email, about, visit_date, begin_time, end_time)
+             VALUES (:visitor_id, :NIP, :reason, :name, :last_name, :email, :about, :visit_date, :begins_at, :end_at)'
         );
         $statement->execute([
             'visitor_id' => $visitor_id,
             'NIP' => $NIP,
             'reason' => $reason,
+            'name' => $name,
+            'last_name' => $lastname,
+            'email' => $email,
             'about' => $about,
             'visit_date' => $visit_date,
             'begins_at' => $begins_at,

@@ -76,15 +76,15 @@
             <label for="first-name" class="text-left block text-sm/6 font-medium text-gray-900">Name*</label>
             <div class="mt-2">
               <input type="text"
-               id="name"
-               name="name"
+               id="first_name"
+               name="first_name"
                class="pl-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm/6"
-               value="<?php echo isset($_POST['name']) ? htmlspecialchars($_POST['name']) : ''; ?>"
+               value="<?php echo isset($_POST['first_name']) ? htmlspecialchars($_POST['first_name']) : ''; ?>"
                required>     
             </div>
-            <?php if (isset($errors['name'])): ?>
+            <?php if (isset($errors['first_name'])): ?>
                 <p class="text-left text-red-500 text-sm">
-                    <?= htmlspecialchars($errors['name']); ?>
+                    <?= htmlspecialchars($errors['first_name']); ?>
                 </p>
             <?php endif; ?>
           </div>
@@ -93,15 +93,15 @@
             <label for="last-name" class="text-left block text-sm/6 font-medium text-gray-900">Last Name*</label>
             <div class="mt-2">
               <input type="text"
-               id="lastname"
-               name="lastname"
+               id="last_name"
+               name="last_name"
                class="pl-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm/6"
-               value="<?php echo isset($_POST['lastname']) ? htmlspecialchars($_POST['lastname']) : ''; ?>"
+               value="<?php echo isset($_POST['last_name']) ? htmlspecialchars($_POST['last_name']) : ''; ?>"
                required>
             </div>
-            <?php if (isset($errors['lastname'])): ?>
+            <?php if (isset($errors['last_name'])): ?>
                 <p class="text-left text-red-500 text-sm">
-                    <?= htmlspecialchars($errors['lastname']); ?>
+                    <?= htmlspecialchars($errors['last_name']); ?>
                 </p>
             <?php endif; ?>
           </div>
@@ -132,7 +132,7 @@
               name="visitor_id"
               type="number"
               min="1"
-              placeholder="Provide your organisation ID"
+              placeholder="ID: 4, 5 only for test"
               class="pl-2 block w-1/2 text-left rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm/6">
             </div>
             <?php if (isset($errors['visitor_id'])): ?>
@@ -178,8 +178,7 @@
                     </p>
                 <?php endif; ?>
               </div>
-              
-
+    
               <div class="flex-1">
                 <label for="end_at" class="text-sm/6 font-medium text-gray-900">Ends At:</label>
                 <input id="end_at"
