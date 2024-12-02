@@ -209,6 +209,6 @@
     </div>
   </div>
 </div>
-<script src="View/js/form-submit.js"></script>
+<script src="View/js/form-submit.js></script>
 
 <?php require 'View/Partials/footer.php'; ?>

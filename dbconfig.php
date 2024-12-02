@@ -3,7 +3,7 @@
 return [
 
     'host' => 'localhost',
-    'port' => '4306',
+    'port' => '3306',
     'database' => 'crm',
     'charset' => 'utf8mb4',
   
