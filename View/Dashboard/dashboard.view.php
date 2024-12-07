@@ -10,7 +10,7 @@
       </div>
 
       <div class="ml-auto flex items-baseline space-x-4">
-        <a href="/CRM/" class="<?php echo urlIS('/CRM/') ? 'bg-gray-900 text-white' : 'text-gray-400 hover:bg-gray-700 hover:text-white'; ?> rounded-md px-3 py-2 text-sm font-medium" aria-current="page">Log Out</a>
+        <a href="Controllers/Login/logout.php" class="<?php echo urlIS('/CRM/') ? 'bg-gray-900 text-white' : 'text-gray-400 hover:bg-gray-700 hover:text-white'; ?> rounded-md px-3 py-2 text-sm font-medium" aria-current="page">Log Out</a>
       </div>
     </div>
   </div>
