@@ -12,5 +12,6 @@ function urlIS($value) {
     return $path === $value;
 }
 
+
 ?>
 

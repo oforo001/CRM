@@ -1,4 +1,5 @@
 <?php
+session_start();
 require 'Validator.php';
 require 'DB.php';
 
@@ -6,6 +7,7 @@ $dbConnection = new Database();
 $errors = [];
 
 $errormessage = 'Provide correct data';
+$succsess_message = 'You are successfully registered!';
 
 $organisation_name = htmlspecialchars($_POST['business_name'] ?? '', ENT_QUOTES, 'UTF-8');
 $email = htmlspecialchars($_POST['email'] ?? '', ENT_QUOTES, 'UTF-8');
@@ -51,7 +53,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
         ]
       
       );
-      $accountCreated = true;
+      $_SESSION['user'] = [
+        'organisation_name' => $organisation_name,
+        'succsess_message' => $succsess_message
+      ];
+
+      header('Location: /CRM/for-businesses/login');
+      exit();
     }
   }
 }

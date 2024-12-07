@@ -7,5 +7,6 @@ return [
     '/CRM/for-businesses/register' => 'Controllers/Register/register.php',
     '/CRM/for-businesses/login' => 'Controllers/Login/login.php',
     '/CRM/create-appointment' => 'Controllers/Create/create-appointment.php',
+    '/CRM/dashboard' => 'Controllers/Dashboard/dashboard.php'
   
 ];
