@@ -32,6 +32,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     $user->execute(['email' => $email,
     'NIP' => $NIP]);
     $result_user = $user->fetch();
+    $organisation_name = $result_user['businnes_name'];
     
   }
   if(! $result_user){
@@ -41,8 +42,10 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     if(password_verify($password, $result_user['password'])){
       $_SESSION['loginned_user'] = [
         'email' => $email,
-        'NIP' => $NIP
+        'NIP' => $NIP,
+        'organisation_name' => $organisation_name
       ];
+      //dd($_SESSION['loginned_user']);
       
       header('Location: /CRM/dashboard');
       exit();

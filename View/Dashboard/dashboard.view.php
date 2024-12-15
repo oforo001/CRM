@@ -16,23 +16,44 @@
   </div>
 </nav>
 
-<!--
-  This example requires updating your template:
-
-  ```
-  <html class="h-full bg-gray-100">
-  <body class="h-full">
-  ```
--->
 <div class="min-h-full">
  
 
   <header class="bg-white shadow">
-    <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
-      <h1 class="text-3xl font-bold tracking-tight text-gray-900">All reservations</h1>
+  <div class="mx-auto w-full max-w-lg md:max-w-xl lg:max-w-3xl px-4 sm:px-6 mb-6">
+  <?php if (isset($_SESSION['loginned_user'])): ?>
+    <div class="p-6 bg-gray-100 border-l-4 border-green-500 text-gray-700 rounded-md shadow-md flex items-start space-x-4">
+      <div class="flex-shrink-0">
+        <!-- Icon (using a checkmark for success) -->
+        <svg class="h-6 w-6 text-gray-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+        </svg>
+      </div>
+      <div>
+        <p class="text-lg font-semibold">You are loginned as:</p>
+        <p class="mt-1 text-xl font-bold text-gray-800"><?= htmlspecialchars($_SESSION['loginned_user']['organisation_name']); ?></p>
+      </div>
     </div>
+  <?php endif; ?>
+</div>
   </header>
   <main>
+  <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+    <?php if (!empty($appointsment_data)): ?>
+      <!-- Info Box for Reservations Count -->
+      <div class="mb-6 p-4 bg-blue-100 border-l-4 border-blue-500 text-blue-700 rounded-md shadow-md flex items-center space-x-4">
+        <div class="flex-shrink-0">
+          <!-- Info Icon -->
+          <svg class="h-6 w-6 text-blue-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M12 4a8 8 0 110 16 8 8 0 010-16z" />
+          </svg>
+        </div>
+        <div>
+          <p class="text-lg font-semibold">All Reservations</p>
+          <p class="text-sm">Total Reservations: <strong><?= count($appointsment_data); ?></strong></p>
+        </div>
+        <?php endif; ?>
+      </div>
     <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
     <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
       <?php if(! empty($appointsment_data)): ?>
@@ -58,13 +79,13 @@
           <?php foreach ($appointsment_data as $appointment): ?>
             <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
               
-                <td class=class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                     <?php echo htmlspecialchars($appointment['representant_name']); ?>
                 </td>
-                <td class=class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                     <?php echo htmlspecialchars($appointment['representant_lastname']); ?>
                 </td>
-                <td class=class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                     <?php echo htmlspecialchars($appointment['representant_email']); ?>
                 </td>
                 <td class="px-6 py-4 text-right">
