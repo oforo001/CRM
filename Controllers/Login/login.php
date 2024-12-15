@@ -41,7 +41,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     if(password_verify($password, $result_user['password'])){
       $_SESSION['loginned_user'] = [
         'email' => $email,
-        'organisation_name' => $result_user['business_name']
+        'NIP' => $NIP
       ];
       
       header('Location: /CRM/dashboard');

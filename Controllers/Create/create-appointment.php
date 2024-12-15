@@ -66,6 +66,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
            
         }
     }
+    else{
+        $errors['visitor_id'] = $errorMessage;
+    }
 
     if(! Validator:: isDateOk($visit_date)){
         $errors['visit_date'] = $errorMessage;
