@@ -40,10 +40,8 @@
   <main>
   <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
     <?php if (!empty($appointsment_data)): ?>
-      <!-- Info Box for Reservations Count -->
       <div class="mb-6 p-4 bg-blue-100 border-l-4 border-blue-500 text-blue-700 rounded-md shadow-md flex items-center space-x-4">
         <div class="flex-shrink-0">
-          <!-- Info Icon -->
           <svg class="h-6 w-6 text-blue-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M12 4a8 8 0 110 16 8 8 0 010-16z" />
           </svg>
@@ -89,7 +87,7 @@
                     <?php echo htmlspecialchars($appointment['representant_email']); ?>
                 </td>
                 <td class="px-6 py-4 text-right">
-                    <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Details</a>
+                    <a href="/CRM/dashboard/appointment?id=<?php echo urldecode($appointment['visit_id']); ?>" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Details</a>
                   </td>
             </tr>
             <?php endforeach; ?>

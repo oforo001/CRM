@@ -12,7 +12,7 @@ require 'DB.php';
 $dbConnection = new Database();
 
 $stm = $dbConnection->prepare('
-  SELECT representant_name, representant_lastname, representant_email
+  SELECT visit_id, representant_name, representant_lastname, representant_email
   FROM visits
   WHERE business_nip = :business_nip
 ');
@@ -20,6 +20,7 @@ $stm->execute(['business_nip' => $loginned_user['NIP']]);
 
 
 $appointsment_data = $stm->fetchAll();
+//dd($appointsment_data);
 
 
 
