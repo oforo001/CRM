@@ -13,7 +13,7 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])){
 $dbConnection = new Database();
 $errors = [];
 
-$fetchedResult = updateDashboardView($dbConnection, $visit_id);
+$fetchedResult = update_show_veiw($dbConnection, $visit_id);
 //dd($fetchedResult);
 
 

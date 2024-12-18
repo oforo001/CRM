@@ -1,26 +1,24 @@
 <?php 
 session_start();
 
+require_once 'functions.php';
+
 
 if(! isset($_SESSION['loginned_user'])){
   header('Location: /CRM/for-businesses/login');
   exit();
 }
-$loginned_user = $_SESSION['loginned_user'];
+$loginned_user = $_SESSION['loginned_user']['NIP'];
+var_dump($loginned_user);
+//die();
 
 require 'DB.php';
 $dbConnection = new Database();
 
-$stm = $dbConnection->prepare('
-  SELECT visit_id, representant_name, representant_lastname, representant_email
-  FROM visits
-  WHERE business_nip = :business_nip
-');
-$stm->execute(['business_nip' => $loginned_user['NIP']]);
 
 
-$appointsment_data = $stm->fetchAll();
-//dd($appointsment_data);
+$appointsment_data = update_dashboard($dbConnection, $loginned_user);
+
 
 
 
