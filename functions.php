@@ -12,6 +12,16 @@ function urlIS($value) {
     return $path === $value;
 }
 
+function updateDashboardView($db_connection, $value){
+    $stm = $db_connection->prepare('
+        SELECT  reason, about, visit_date, begin_time, end_time, created_at
+        FROM visits
+        WHERE visit_id = :visit_id
+    ');
+    $fetchedResult = $stm->execute(['visit_id' => $value])->fetch();
+    return $fetchedResult;
+}
 
-?>
+
+
 
