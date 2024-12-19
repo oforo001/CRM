@@ -28,31 +28,27 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     $user = $dbConnection->prepare(
       'SELECT * FROM businesses WHERE email = :email AND nip = :NIP'
     );
-
     $user->execute(['email' => $email,
     'NIP' => $NIP]);
     $result_user = $user->fetch();
-    $organisation_name = $result_user['businnes_name'];
-    
-  }
-  if(! $result_user){
-    $errors['account_not_exist'] = 'No matching account found for that E-Mail or NIP';
-  }
-  else{
-    if(password_verify($password, $result_user['password'])){
-      $_SESSION['loginned_user'] = [
-        'email' => $email,
-        'NIP' => $NIP,
-        'organisation_name' => $organisation_name
-      ];
-      //dd($_SESSION['loginned_user']);
-      
-      header('Location: /CRM/dashboard');
-      exit();
-    }
+
+      if($result_user){
+          if(password_verify($password, $result_user['password'])){
+              $_SESSION['loginned_user'] = [
+                  'email' => $email,
+                  'NIP' => $NIP,
+                  'organisation_name' => $result_user['businnes_name']
+                  ];
+              header('Location: /CRM/dashboard');
+              exit();
+          }
+          else {
+              $errors['password'] = 'Incorrect password';
+          }
+      }
+      else{
+          $errors['account_not_exist'] = 'No matching account found for that E-Mail or NIP';
+      }
   }
 }
-
-
 require 'View/Login/login.view.php';
-?>

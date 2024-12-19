@@ -24,7 +24,6 @@
   <?php if (isset($_SESSION['loginned_user'])): ?>
     <div class="p-6 bg-gray-100 border-l-4 border-green-500 text-gray-700 rounded-md shadow-md flex items-start space-x-4">
       <div class="flex-shrink-0">
-        <!-- Icon (using a checkmark for success) -->
         <svg class="h-6 w-6 text-gray-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
         </svg>

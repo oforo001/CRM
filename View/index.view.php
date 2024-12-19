@@ -11,7 +11,7 @@
           
           <p>
             Welcome to your appointment management system! Simplify your daily scheduling tasks,
-            without borring calls and emails. My platform will easyly help you to manage your appointments
+            without borring calls and emails. My platform will easily help you to manage your appointments
             My intuitive app allows you to 
             plan, manage, and report visits seamlessly, empowering you to focus on building stronger client relationships.
           </p>
@@ -31,8 +31,8 @@
                 <path fill-rule="evenodd" d="M10 1a4.5 4.5 0 0 0-4.5 4.5V9H5a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6a2 2 0 0 0-2-2h-.5V5.5A4.5 4.5 0 0 0 10 1Zm3 8V5.5a3 3 0 1 0-6 0V9h6Z" clip-rule="evenodd" />
               </svg>
               <span><strong class="font-semibold text-gray-900">Security and Reliability: </strong>
-              <strong>Your Data is Safe with Us</strong>
-              We understand the importance of protecting your organization’s sensitive information.
+              <strong>Your Data is Safe with us</strong>
+               We understand the importance of protecting your organization’s sensitive information.
                That’s why our platform is built with robust security features:</span>
             </li>
             <ul class="mt-2 list-disc list-inside pl-6">

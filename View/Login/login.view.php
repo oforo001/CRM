@@ -1,4 +1,4 @@
-<?php require 'View/Partials/header.php'; ?>
+f<?php require 'View/Partials/header.php'; ?>
 
 <nav class="bg-gray-800">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
